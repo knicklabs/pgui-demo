@@ -1,6 +1,7 @@
 import { storiesOf } from '@storybook/svelte';
 import { action } from '@storybook/addon-actions';
 
+import App from '../src/App.svelte'
 import Avatar from '../src/Avatar.svelte';
 import Button from './button.svelte';
 import Member from '../src/Member.svelte';
@@ -9,6 +10,11 @@ import Members from '../src/Members.svelte';
 import { makeMember, makeMembers } from '../src/fixtures/member'
 
 import '../public/global.css'
+
+storiesOf('App', module)
+  .add('prototype', () => ({
+    Component: App,
+  }))
 
 storiesOf('Avatar', module)
   .add('with random member', () => ({
