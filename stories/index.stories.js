@@ -2,6 +2,9 @@ import { storiesOf } from '@storybook/svelte';
 import { action } from '@storybook/addon-actions';
 
 import Button from './button.svelte';
+import Member from '../src/Member.svelte';
+
+import '../public/global.css'
 
 storiesOf('Button', module)
   .add('with text', () => ({
@@ -16,3 +19,9 @@ storiesOf('Button', module)
     },
     on: { click: action('clicked') },
   }));
+
+storiesOf('Member', module)
+  .add('with name', () => ({
+    Component: Member,
+    props: { name: 'Nickolas Kenyeres' }
+  }))
