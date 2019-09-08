@@ -1,11 +1,9 @@
-import { storiesOf } from '@storybook/svelte';
-import { action } from '@storybook/addon-actions';
+import { storiesOf } from '@storybook/svelte'
 
-import App from '../src/App.svelte'
-import Avatar from '../src/Avatar.svelte';
-import Button from './button.svelte';
-import Member from '../src/Member.svelte';
-import Members from '../src/Members.svelte';
+import App from '../src/components/App.svelte'
+import Avatar from '../src/components/Avatar.svelte'
+import Member from '../src/components/Member.svelte'
+import Members from '../src/components/Members.svelte'
 
 import { makeMember, makeMembers } from '../src/fixtures/member'
 
@@ -21,20 +19,6 @@ storiesOf('Avatar', module)
     Component: Avatar,
     props: { ...makeMember() }
   }))
-
-storiesOf('Button', module)
-  .add('with text', () => ({
-    Component: Button,
-    props: { text: 'Hello Button' },
-    on: { click: action('clicked') },
-  }))
-  .add('with some emoji', () => ({
-    Component: Button,
-    props: {
-      text: '😀 😎 👍 💯',
-    },
-    on: { click: action('clicked') },
-  }));
 
 storiesOf('Member', module)
   .add('with random member', () => ({
