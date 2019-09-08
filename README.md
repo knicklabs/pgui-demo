@@ -4,7 +4,7 @@
 
 ## THIS IS NOT PRODUCTION CODE
 
-1. The code in this repostitory was developed for a talk. The public folder contains files from the Svelte 3 starter project. Everything I created for this demo is in `/src` and I encourage you to explore it and use the ideas presented here.
+1. The code in this repostitory was developed for a talk. I encourage you to explore it and use the ideas presented here.
 2. The only `npm` command you will find useful here is `npm run storybook`.
 3. The `src/api/index.js` should conditionally load the real API or mock API. In Storybook it will load the Mock API. Unfortunately, Rollup.js has a lot of problems and the technique used here only appears to work with webpack. So if you are using Rollup your mileage will vary. After my experience here (though this is my first time using Svelte/Rollup) I would use webpack next time. (Storybook uses webpack and its totally fine).
 
