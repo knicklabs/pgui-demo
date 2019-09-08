@@ -1,10 +1,20 @@
 import { storiesOf } from '@storybook/svelte';
 import { action } from '@storybook/addon-actions';
 
+import Avatar from '../src/Avatar.svelte';
 import Button from './button.svelte';
 import Member from '../src/Member.svelte';
+import Members from '../src/Members.svelte';
+
+import { makeMember, makeMembers } from '../src/fixtures/member'
 
 import '../public/global.css'
+
+storiesOf('Avatar', module)
+  .add('with random member', () => ({
+    Component: Avatar,
+    props: { ...makeMember() }
+  }))
 
 storiesOf('Button', module)
   .add('with text', () => ({
@@ -21,7 +31,13 @@ storiesOf('Button', module)
   }));
 
 storiesOf('Member', module)
-  .add('with name', () => ({
+  .add('with random member', () => ({
     Component: Member,
-    props: { name: 'Nickolas Kenyeres' }
+    props: { ...makeMember() }
+  }))
+
+storiesOf('Members', module)
+  .add('with random members', () => ({
+    Component: Members,
+    props: { members: makeMembers(1000) }
   }))
